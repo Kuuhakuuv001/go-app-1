@@ -3,3 +3,5 @@ resources:
   requests:
     cpu: 30m
     memory: 30M
+image:
+  tag: 0b831c
