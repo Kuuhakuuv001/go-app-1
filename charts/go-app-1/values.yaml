@@ -1,0 +1,52 @@
+replicaCount: 1
+image:
+  repository: minhitptit/go-app-1
+  pullPolicy: IfNotPresent
+  tag: go-app-1-dev-latest
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+podAnnotations: {}
+podLabels: {}
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: ""
+podSecurityContext: {}
+securityContext: {}
+service:
+  type: ClusterIP
+  port: 3000
+ingress:
+  enabled: "true"
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: go-app-1-dev.test.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+resources:
+  requests:
+    cpu: 50m
+    memory: 50M
+livesnessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: http
+readinessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: http
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentange: 80
+volumes: []
+volumeMounts: []
+nodeSelector: {}
+tolerations: []
+affinity: {}

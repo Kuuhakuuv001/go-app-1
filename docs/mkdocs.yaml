@@ -1,0 +1,12 @@
+site_name: 'go-app-1'
+site_description: 'Main documentation for go-app-1'
+repo_url: https://github.com/Minh141120/go-app-1
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
+nav:
+  - Overview:
+      - Getting started: 'docs/index.md'

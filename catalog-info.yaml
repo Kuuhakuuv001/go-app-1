@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: go-app-1
+  description: Sample Go microservice display hostname and time. Named go-app-1
+  annotations:
+    github.com/project-slug: Minh141120/go-app-1
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
